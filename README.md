@@ -4,11 +4,11 @@
 The cloud based web-filter boasts that they are partners with the Internet Watch Foundation (IWF). Per Securly's [site](https://blog.securly.com/2016/06/29/meet-our-new-partners-ikeepsafe-the-internet-watch-foundation/): 
 
 > The IWF is a UK-based charity whose goal is to eradicate child pornography. They >tirelessly work to remove child sexual abuse images and videos.
->  
+
 >Tracking these websites is especially hard since they’re seldom hosted on static >domains. To compensate, IWF has full time staff tracing these sites; and in many >cases, they have brought the creators of the material to justice.
-> 
+
 >This partnership achieves two goals for Securly:
-> 
+
 >By supporting the IWF in their mission, Securly reaffirms its commitment to online >child safety.
 >With each daily IWF list release, Securly is able to update its own blacklist URLs, >allowing schools to pre-empt potential legal and PR perils that would result if >child porn was accessed on their network.
 
