@@ -5,12 +5,12 @@ The cloud based web-filter boasts that they are partners with the Internet Watch
 
 > The IWF is a UK-based charity whose goal is to eradicate child pornography. They >tirelessly work to remove child sexual abuse images and videos.
 
->Tracking these websites is especially hard since they’re seldom hosted on static >domains. To compensate, IWF has full time staff tracing these sites; and in many >cases, they have brought the creators of the material to justice.
+>Tracking these websites is especially hard since they’re seldom hosted on static domains. To compensate, IWF has full time staff tracing these sites; and in many >cases, they have brought the creators of the material to justice.
 
 >This partnership achieves two goals for Securly:
 
->By supporting the IWF in their mission, Securly reaffirms its commitment to online >child safety.
->With each daily IWF list release, Securly is able to update its own blacklist URLs, >allowing schools to pre-empt potential legal and PR perils that would result if >child porn was accessed on their network.
+>By supporting the IWF in their mission, Securly reaffirms its commitment to online child safety.
+>With each daily IWF list release, Securly is able to update its own blacklist URLs, allowing schools to pre-empt potential legal and PR perils that would result if child porn was accessed on their network.
 
 By this information, schools, parents, and students interpret that Securly is able to allow schools to preemptively block child pornography using the Securly web-filtering appliance. Schools expect, as you say, to avoid potential legal and PR perils. Students expect to feel safe using your web-filtering, safe from dangerous websites which may host child pornography. Parents expect for the school to maintain control over their web-filtering, to abide by loco parentis and keep their children safe.
 
