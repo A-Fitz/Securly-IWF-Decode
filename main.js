@@ -36,7 +36,6 @@ function myB64EncodeHelper(c, step) {
 	return String.fromCharCode(asciiPos);
 }
 
-
 //Reverse function of myB64Encode
 function Decode(str) {
   //split string into parts
