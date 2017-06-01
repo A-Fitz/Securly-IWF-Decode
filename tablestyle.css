@@ -21,13 +21,8 @@ If you like this solution, you might also want to check out the 1.0 version:
 td,
 th {
     min-width: 3em;
-    /* the normal 'fixed' width */
-    
     width: 4em;
-    /* the normal 'fixed' width */
-    
     max-width: 4em;
-    /* the normal 'fixed' width, to stop the cells expanding */
 }
 .responstable {
     margin: 1em 0;
