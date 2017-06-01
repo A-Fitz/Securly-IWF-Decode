@@ -1,5 +1,5 @@
 # Securly IWF List Decoding
-[Securly](https://www.securly.com/), a web-filtering service used by over 200 school districts throughout the United States has a major security problem related to their child-pornography filtering list.
+[Securly](https://www.securly.com/), a web-filtering service used by over 200 school districts throughout the United States has a major security problem. The cloud based web-filter carelessly encodes and manages a bi-daily updating list of supposed sites harboring child pornography. Not only does this exploit allow users to access such sites, Securly has mismanaged their service in such a grave way that they create a means to access a live list of sites to view and distribute these terrible images.
 
 The cloud based web-filter boasts that they are partners with the Internet Watch Foundation (IWF). Per Securly's [site](https://blog.securly.com/2016/06/29/meet-our-new-partners-ikeepsafe-the-internet-watch-foundation/): 
 
