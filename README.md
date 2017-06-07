@@ -1,86 +1,24 @@
-# Securly IWF List Decoding
+Securly Bypass & Exploit Compilation
+------------------------------------
 
-Securly routes [this list](http://cdn1.securly.com/iwf-encode.txt) through their official CDN, it is handpicked by the IWF to help web-filter child pornography. The list is known to update 1-2 times daily. Securly attempts to encode this list by running each line through a Base64 encoding scheme, transposing each character three ascii values backwards, and joining the characters again. Their script includes a *step* variable, yet this variable is not only accessible directly through the console, but by it is also a static number (3). I believe that many of Securly's issues with this exploit could be solved by updating this step variable with each list update. Also, they would need to find a way to make sure that this step variable cannot be interpreted by the user in any way.
+This Google Drive folder includes a directory of various exploits and bypasses I have found for the URL filtering within the Securly extension. All circumventions have been found or created on a school issued Chromebook during schooltime. Overall I have spent about four days finding, creating, and compiling these bypasses and results. 
 
-#### The original encoding functions
+**Current Circumventions:**
 
-~~~~
-function myB64Encode(str, step) {
-	var res = window.btoa(str).split('');
-	for (var i = 0; i < res.length; i++) {
-		res[i] = myB64EncodeHelper(res[i], step);
-	}
-	return res.join('');
-}
+ - Main IWF List Exploit: These decoding scripts allow anyone to decode
+   the bi-daily updating list of links used to filter child pornography
+   throughout Securly URL filtering. The main webpage in the folder, if
+   uploaded to a server, will automatically decode all results from the
+   list and organize them cleanly into a table.
+ - localStorage and sessionStorage Bypasses: These bypasses allow users
+   to circumvent Securly’s IWF filtering completely by editing or
+   clearing the localStorage or add almost any site they wish to the
+   allowed hostnames in sessionStorage.
+ - Obscure Browser: This external chrome extension acts as a Chrome
+   kiosk window. By doing so, this browser no longer acts as the regular
+   Chrome browser would. No extras such as bookmarks, accounts, nor
+   extensions (Securly) are appended and users can access any site.
 
-function myB64EncodeHelper(c, step) {
-	var asciiPos = c.charCodeAt(0);
-	if ('0' <= c && c <= '9') {
-		step %= 10;
-		asciiPos += step;
-		if (asciiPos > '9'.charCodeAt(0)) {
-			asciiPos -= 10;
-		}
-	}
-	else if ('A' <= c && c <= 'Z') {
-		step %= 26;
-		asciiPos += step;
-		if (asciiPos > 'Z'.charCodeAt(0)) {
-			asciiPos -= 26;
-		}
-	}
-	else if ('a' <= c && c <= 'z') {
-		step %= 26;
-		asciiPos += step;
-		if (asciiPos > 'z'.charCodeAt(0)) {
-			asciiPos -= 26;
-		}
-	}
-	return String.fromCharCode(asciiPos);
-}
-~~~~
-
-To decode this is simple, I created two new functions that are pretty much reverses of the originals. It splits each encoded string into an array of characters, then transposes the ascii position of each letter down three. When the transposing is done, the script joins the letters and decodes from base64. In these functions I ignored the original step variable because it was statically set to three. 
-
-#### Decoding functions
-~~~~
-function Decode(str) {
-	var res = str.split('');
-	for (var i = 0; i < res.length; i++) {
-		res[i] = DecodeHelper(res[i]);
-	}
-	res = res.join('');
-	return window.atob(res);
-}
-
-function DecodeHelper(c) {
-	var asciiPos = c.charCodeAt(0);
-	if ('0' <= c && c <= '9') {
-		asciiPos -= 3;
-		if (asciiPos < '0'.charCodeAt(0)) {
-			asciiPos += 10;
-		}
-	} else if ('A' <= c && c <= 'Z') {
-		asciiPos -= 3;
-		if (asciiPos < 'A'.charCodeAt(0)) {
-			asciiPos += 26;
-		}
-	} else if ('a' <= c && c <= 'z') {
-		asciiPos -= 3;
-		if (asciiPos < 'a'.charCodeAt(0)) {
-			asciiPos += 26;
-		}
-	}
-	return String.fromCharCode(asciiPos);
-}
-~~~~
-
-The main page that I have created organizes the live encoded results from Securly's IWF list, along with the decoded results, into an organized table. You can view this table by uploading the files to a server or by downloading the iwf-encode.txt and changing the decodePage function in main.js.
-
-![Main page showing table](http://i.imgur.com/FBuCXZC.png "Main page showng table")
-
-Not only are these results easy to decode, students can completely avoid the child pornography web-filtering by simply clearing the local storage of the chrome extension.
-![Local storage bypass](http://i.imgur.com/MiUiilo.png "Local storage bypass")
-
-Along with this, any student can also add a domain of their choice, and the allow parameters, to the extension's session storage to avoid all web-filtering in general.
-![Session storage bypass](http://i.imgur.com/GHJGDFi.png "Session storage bypass")
+ 
+**Suggested Fixes:**
+	For most of these bypasses, I recommend ensuring that each institution using Securly’s URL filtering implements related group policies on their devices. Simply not allowing students to access developer tools helps stop half the battle of these bypasses; although I still believe there need to be a few revisions to the code. For the main IWF list exploit, I first recommend a revised encoding algorithm. While transposing each string’s characters is smart, it’s not enough security for this type of list. Your functions already have remnants of a step variable, which could be very useful. With the bi-daily updates of the IWF list, you could also send over an encrypted step value with each update. As long as a user has no means of access to this decryption key, it would be very hard to decode the strings. Randomized step values ensure that the transposition of each string is also random based off bi-daily updates.
