@@ -1,7 +1,7 @@
 Securly Bypass & Exploit Compilation
 ------------------------------------
 
-This Google Drive folder includes a directory of various exploits and bypasses I have found for the URL filtering within the Securly extension. All circumventions have been found or created on a school issued Chromebook during schooltime. Overall I have spent about four days finding, creating, and compiling these bypasses and results. 
+This repository includes a directory of various exploits and bypasses I have found for the URL filtering within the Securly extension. All circumventions have been found or created on a school issued Chromebook during schooltime. Overall I have spent about four days finding, creating, and compiling these bypasses and results. 
 
 **Current Circumventions:**
 
