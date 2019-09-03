@@ -14,10 +14,6 @@ This repository includes a directory of various exploits and bypasses I have fou
    to circumvent Securly’s IWF filtering completely by editing or
    clearing the localStorage or add almost any site they wish to the
    allowed hostnames in sessionStorage.
- - Obscure Browser: This external chrome extension acts as a Chrome
-   kiosk window. By doing so, this browser no longer acts as the regular
-   Chrome browser would. No extras such as bookmarks, accounts, nor
-   extensions (Securly) are appended and users can access any site.
 
  
 **Suggested Fixes:**
